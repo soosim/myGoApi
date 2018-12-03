@@ -1,6 +1,7 @@
 package bases
 
 import (
+	"myGoApi/helpers"
 	"strconv"
 	"time"
 )
@@ -14,7 +15,7 @@ type DebugResult struct {
 
 func (this *DebugResult) Init() {
 	this.EndTime = strconv.FormatInt(time.Now().Unix(), 10)
-	this.LogId = string("xxxxxxxxxxxxxxxxxxxxxxxxx")
+	this.LogId = helpers.GetLoggerHelperObj()
 }
 
 func (this *DebugResult) SetData(data interface{}) {

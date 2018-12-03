@@ -15,9 +15,8 @@ func (this *BaseController) Prepare() {
 }
 
 func (o *BaseController) Success(data interface{}) {
-	debugHelper := new(helpers.DebugHelper)
 	var res IResult
-	if debugHelper.IsDebug() {
+	if helpers.IsDebug() {
 		res = &DebugResult{}
 	} else {
 		res = &BaseResult{ErrNo: "0", ErrMsg: ""}
@@ -25,5 +24,7 @@ func (o *BaseController) Success(data interface{}) {
 	res.Init()
 	res.SetData(data)
 	o.Data["json"] = res
+
+	helpers.ClearLogId()
 	o.ServeJSON()
 }
