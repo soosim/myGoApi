@@ -25,3 +25,4 @@ func (this *DebugResult) Init() {
 func (this *DebugResult) SetData(data interface{}) {
 	this.Data = data
 }
+
