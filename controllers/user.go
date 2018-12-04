@@ -3,7 +3,6 @@ package controllers
 import (
 	"encoding/json"
 	"myGoApi/bases"
-	"myGoApi/helpers"
 	"myGoApi/models"
 )
 
@@ -31,9 +30,9 @@ func (u *UserController) Post() {
 // @Success 200 {object} models.User
 // @router / [get]
 func (u *UserController) GetAll() {
-	helpers.GetLoggerHelperObj()
-	users := models.GetAllUsers()
-	u.Success(users)
+	//helpers.GetLoggerHelperObj()
+	//users := models.GetAllUsers()
+	u.Success(nil)
 	// u.Data["json"] = users
 	// u.ServeJSON()
 }
